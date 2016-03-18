@@ -271,6 +271,19 @@ class Client
 
         return self::mapResource($resource, $response);
     }
+    
+    /**
+     * Get response as json from the specified endpoint.
+     *
+     * @param string $path api endpoint
+     * @return response from endpoint as json format
+     */
+    public static function get($path)
+    {
+        $response = self::connection()->get(self::$api_path . $path);
+
+        return $response;
+    }
 
     /**
      * Get a count value from the specified endpoint.
